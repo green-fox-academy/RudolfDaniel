@@ -1,1 +1,3 @@
 blabla
+12345
+ez is kell még textfile2.txt
