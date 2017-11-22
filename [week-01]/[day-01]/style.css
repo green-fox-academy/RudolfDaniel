@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    background-image: url(topography.png);
+    font-family: consolas, courier;
+}
+
+.fej {
+    padding: 1% 10% 1% 10%;
+    background-color: #333333;
+}
+
+.home {
+    float: right;
+}
+
+.wiki {
+    float: right;
+}
+
+.github {
+    float: right;
+}
+
+.linkedin {
+    float: right;
+}
+
+a {
+    padding: 10px;
+    color: #ff0099;
+}
+
+.test {
+    padding: 10%;
+}
+
+h1 {
+    font-family: 'Slabo 27px', serif;
+}
+
+h2 {
+    color: #ff0099;
+}
+
+.cim {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.kozep {
+    margin-top: 100px;
+    text-align: center;
+}
