@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 h1 {
@@ -13,4 +13,20 @@ h2 {
 
 h3 {
     color: rgb(143, 43, 226);
+}
+
+ul {
+    line-height: 0.1em;
+    list-style: inside square;
+}
+
+ol {
+    color: rgb(255, 25, 255);
+    list-style-type: upper-roman;
+    text-decoration: underline;
+}
+
+ol li:last-child {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
 }
