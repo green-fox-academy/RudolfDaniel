@@ -19,7 +19,7 @@ body {
 }
 
 .container-1 {
-    margin-bottom: 27px;
+    margin-bottom: 16px;
     padding: 13px;
     height: 30px;
     background-color: rgb(255, 228, 46)
@@ -35,4 +35,11 @@ body {
 
 div.container-2:nth-of-type(3) {
     float: right;
+}
+
+.container-3 {
+    margin-top: 468px;
+    padding: 13px;
+    height: 158px;
+    background-color: rgb(255, 228, 46)
 }
