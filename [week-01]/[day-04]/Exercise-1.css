@@ -12,7 +12,27 @@ body {
     margin-bottom: 12px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 12px;
     width: 624px;
     height: 784px;
     background-color: rgb(18, 119, 49)
+}
+
+.container-1 {
+    margin-bottom: 27px;
+    padding: 13px;
+    height: 30px;
+    background-color: rgb(255, 228, 46)
+}
+
+.container-2 {
+    float: left;
+    padding: 13px;
+    width: 286px;
+    height: 410px;
+    background-color: rgb(255, 228, 46)
+}
+
+div.container-2:nth-of-type(3) {
+    float: right;
 }
