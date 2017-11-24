@@ -43,3 +43,22 @@ div.container-2:nth-of-type(3) {
     height: 158px;
     background-color: rgb(255, 228, 46)
 }
+
+.skeleton-1 {
+    float: left;
+    margin-top: 150px;
+    border: 2px solid black;
+    height: 42px;
+    width: 139px;
+}
+
+div.skeleton-1:nth-of-type(2) {
+    float: right;
+}
+
+.skeleton-2 {
+    margin-top: 239px;
+    border: 2px solid black;
+    height: 147px;
+    width: 282px;
+}
