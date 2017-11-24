@@ -1,0 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(220, 214, 205)
+}
+
+.box {
+    margin-top: 11px;
+    margin-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 624px;
+    height: 784px;
+    background-color: rgb(18, 119, 49)
+}
