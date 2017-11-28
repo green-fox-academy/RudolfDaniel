@@ -1,5 +1,4 @@
 nr = int(input("Type in a number "))
 
-for i in range(0, nr, 2):
-    print(" "*(nr//2) + "*"*i)
-    nr -= 1
+for i in range(0, nr+1):
+    print(" "*(nr-(i)) + "*"*(2*i-1))
