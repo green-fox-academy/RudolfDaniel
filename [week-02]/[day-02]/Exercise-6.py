@@ -1,4 +1,4 @@
 def printer(*number):
     print(number)
 
-printer("Blabla", "lalala")
+printer ("Blabla", "lalala")
