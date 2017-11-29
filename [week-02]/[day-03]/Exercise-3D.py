@@ -12,18 +12,23 @@ def balance():
             balance = accounts[i]["balance"]
     return balance
 
-print(balance())
+#print(balance())
 
 def transfer():
     accfrom = int(input("Type in account number transfer from: "))
     accto = int(input("Type in account number transfer to: "))
     amount = int(input("Type in amount: "))
+    notfound = "404 - account not found"
     for i in range(0, len(accounts)):
         if accfrom == accounts[i]["account_number"]:
             accounts[i]["balance"] -= amount
+        else:
+            return print(notfound)
     for i in range(0, len(accounts)):
         if accto == accounts[i]["account_number"]:
             accounts[i]["balance"] += amount
-    return print(accounts)
+        else:
+            return print(notfound)
+    return print()
 
-print(transfer())
+transfer()
