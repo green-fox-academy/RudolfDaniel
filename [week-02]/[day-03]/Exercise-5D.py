@@ -15,10 +15,14 @@ def table():
             ingredients[i]["needs_cooling"] = "Yes"
         else:
             ingredients[i]["needs_cooling"] = "No"
+    for i in range(0, len(ingredients)):
+        if ingredients[i]["in_stock"] == 0:
+            ingredients[i]["in_stock"] = str("-")
     print("+" + "-"*20 + "+" + "-"*15 + "+" + "-"*10 + "+")
     print("| Ingredient         | Needs cooling | In stock |")
     print("+" + "-"*20 + "+" + "-"*15 + "+" + "-"*10 + "+")
     for i in range(0, len(ingredients)):
-        print("| " + ingredients[i]["name"] + " "*(19-len(ingredients[i]["name"])) + "| ")
+        print("| " + ingredients[i]["name"] + " "*(19-len(ingredients[i]["name"])) + "| " + ingredients[i]["needs_cooling"] + " "*(14-len(ingredients[i]["needs_cooling"])) + "| " + str(ingredients[i]["in_stock"]) + " "*8 + "|")
+    print("+" + "-"*20 + "+" + "-"*15 + "+" + "-"*10 + "+")
 
 table()
