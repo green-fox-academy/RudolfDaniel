@@ -6,4 +6,4 @@ def write_file(path, word, number):
     except:
         print("ERROR!")
 
-write_file(input("Type in path: "), input("Typye in a word: "), input("How many lines you want: "))
+write_file(input("Type in path: "), input("Tpye in a word: "), input("How many lines you want: "))
