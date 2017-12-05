@@ -1,5 +1,5 @@
 try:
-    my_file = open("my-file.txt", "r")
+    my_file = open("my_file.txt", "r")
     print(my_file.readlines())
     my_file.close()
 except IOError:
