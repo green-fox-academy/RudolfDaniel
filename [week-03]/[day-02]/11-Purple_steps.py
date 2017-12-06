@@ -7,7 +7,7 @@ canvas.pack()
 
 def create_squares(a):
     for i in range(19):
-        square = canvas.create_rectangle(int((1+i)*a), int((1+i)*a), int((2+i)*a), int((2+i)*a), fill='purple')
+        square = canvas.create_rectangle(int(1+i)*a, int(1+i)*a, int(2+i)*a, int(2+i)*a, fill='purple')
 
 create_squares(10)
 
