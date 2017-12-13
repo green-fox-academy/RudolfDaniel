@@ -20,5 +20,9 @@ class TestStringMethods(unittest.TestCase):
         list_of_numbers = Sum()
         self.assertEqual(list_of_numbers.summa([0]), 0)
 
+    def test_anagram(self):
+        anagram = Anagram()
+        self.assertEqual(anagram.is_anagram("nana", "anna"), True or False)
+
 if __name__ == '__main__':
     unittest.main()
