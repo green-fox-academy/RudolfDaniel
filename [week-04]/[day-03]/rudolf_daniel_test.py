@@ -1,4 +1,5 @@
 import unittest
+from random import randint
 from rudolf_daniel_work import *
 
 class TestStringMethods(unittest.TestCase):

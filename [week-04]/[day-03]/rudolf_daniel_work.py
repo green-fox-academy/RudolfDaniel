@@ -1,3 +1,5 @@
+from random import randint
+
 class Apple(object):
     def get_apple(self):
         return "apple"
@@ -59,3 +61,17 @@ class Animal(object):
     def play():
         self.hunger += 1
         self.thirst += 1
+
+class CowsAndBulls(object):
+    def __init__(self):
+        number = randint(1000, 9999)
+        game_state = playing
+        counter = 0
+        random_number_list = []
+        new_number_list = []
+        for i in number:
+            random_number_list.append(i)
+    
+    def guess_result(self, guess):
+        counter += 1
+# Here comes the rest of the class.
