@@ -28,5 +28,11 @@ class TestStringMethods(unittest.TestCase):
         dictionary = CountLetters()
         self.assertEqual(dictionary.dictionary_maker("letter"), {"l":1, "e":2, "t":2, "r":1})
 
+    def test_fibonacci(self):
+        fibo = Fibonacci()
+        self.assertEqual(fibo.fibonacci(8), 21)
+    
+
+
 if __name__ == '__main__':
     unittest.main()

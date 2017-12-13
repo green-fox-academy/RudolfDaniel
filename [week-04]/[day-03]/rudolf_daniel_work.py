@@ -28,3 +28,11 @@ class CountLetters(object):
                 counter[i] += 1
 
         return counter
+
+class Fibonacci(object):
+    def fibonacci(self, number):
+        if number < 2:
+            return number
+        else:
+            return (self.fibonacci(number-1) + self.fibonacci(number-2))
+
