@@ -17,3 +17,14 @@ class Anagram(object):
             return True
         else:
             return False
+
+class CountLetters(object):
+    def dictionary_maker(self, text):
+        counter = {}
+        for i in text:
+            if i not in counter: 
+                counter[i] = 1
+            else:
+                counter[i] += 1
+
+        return counter

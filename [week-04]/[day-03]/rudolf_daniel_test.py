@@ -24,5 +24,9 @@ class TestStringMethods(unittest.TestCase):
         anagram = Anagram()
         self.assertEqual(anagram.is_anagram("nana", "anna"), True or False)
 
+    def test_countletters(self):
+        dictionary = CountLetters()
+        self.assertEqual(dictionary.dictionary_maker("letter"), {"l":1, "e":2, "t":2, "r":1})
+
 if __name__ == '__main__':
     unittest.main()
