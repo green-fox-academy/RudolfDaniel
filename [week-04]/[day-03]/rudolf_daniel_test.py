@@ -31,7 +31,9 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(pen.width, 120)
         self.assertEqual(pen.color, "red")
 
-
+    def test_animal(self):
+        lion = Animal()
+        self.assertEqual(lion.hunger, 50)
 
 if __name__ == '__main__':
     unittest.main()
