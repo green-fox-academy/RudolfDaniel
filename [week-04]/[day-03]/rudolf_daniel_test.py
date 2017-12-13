@@ -10,14 +10,8 @@ class TestStringMethods(unittest.TestCase):
     def test_summa(self):
         list_of_numbers = Sum()
         self.assertEqual(list_of_numbers.summa([]), 0)
-    def test_summa(self):
-        list_of_numbers = Sum()
         self.assertEqual(list_of_numbers.summa([5]), 5)
-    def test_summa(self):
-        list_of_numbers = Sum()
         self.assertEqual(list_of_numbers.summa([11, 22, 33]), 66)
-    def test_summa(self):
-        list_of_numbers = Sum()
         self.assertEqual(list_of_numbers.summa([0]), 0)
 
     def test_anagram(self):
@@ -32,6 +26,11 @@ class TestStringMethods(unittest.TestCase):
         fibo = Fibonacci()
         self.assertEqual(fibo.fibonacci(8), 21)
     
+    def test_sharpie(self):
+        pen = Sharpie("red", 120)
+        self.assertEqual(pen.width, 120)
+        self.assertEqual(pen.color, "red")
+
 
 
 if __name__ == '__main__':

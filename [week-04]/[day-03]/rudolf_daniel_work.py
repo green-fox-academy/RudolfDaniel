@@ -36,3 +36,11 @@ class Fibonacci(object):
         else:
             return (self.fibonacci(number-1) + self.fibonacci(number-2))
 
+class Sharpie(object):
+    def __init__(self, color="", width=0.0):
+        self.ink_amount = 100.0
+        self.color = color
+        self.width = width
+    
+    def use():
+        self.ink_amount -=1
