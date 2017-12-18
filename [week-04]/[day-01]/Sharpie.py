@@ -1,11 +1,11 @@
 class Sharpie(object):
-    ink_amount = 100.0
     def __init__(self, color="", width=0.0):
+        self.ink_amount = 100.0
         self.color = color
         self.width = width
     
     def use():
-        ink_amount +=1
+        self.ink_amount +=1
 
 Santa_Maria = Sharpie(object)
 Santa_Maria.color = "brown"
