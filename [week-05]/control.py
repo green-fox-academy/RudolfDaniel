@@ -1,4 +1,5 @@
 from model import *
+from view import *
 
 class Map(object):
     def __init__(self):
@@ -56,3 +57,14 @@ class Map(object):
         self.tiles[91] = Wall(1 * 72, 9 * 72)
         self.tiles[93] = Wall(3 * 72, 9 * 72)
         self.tiles[95] = Wall(5 * 72, 9 * 72)
+
+mappa = Map()
+drawing = Draw()
+dezso = Hero(0, 0, 1, 20, 10, 10)
+
+for i in range(len(mappa.tiles)):
+    drawing.drawer(mappa.tiles[i])
+
+drawing.drawer(dezso.image_down)
+
+drawing.root.mainloop()

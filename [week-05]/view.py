@@ -1,20 +1,17 @@
 from tkinter import *
-from control import *
+from PIL import ImageTk, Image
 
-root = Tk()
+images = []
 
-canvas = Canvas(root, width="720", height="720")
-canvas.pack()
+class Draw(object):
+    def __init__(self):
+        self.root = Tk()
+        self.canvas = Canvas(self.root, width="720", height="720")
+        self.canvas.pack()
+        self.useful_image = "overwrite"
 
-mappa = Map()
-dezso = Hero(0, 0, 1, 20, 0, 0)
-
-def drawer(thing):
-    image = canvas.create_image(thing.coordinate_x + 72, thing.coordinate_y, anchor=NE, image=thing.image)
-
-for i in range(len(mappa.tiles)):
-    drawer(mappa.tiles[i])
-
-drawer(dezso)
-
-root.mainloop()
+    def drawer(self, thing):
+        useful_image = Image.open(thing.image)
+        image_obj = ImageTk.PhotoImage(useful_image)
+        images.append(image_obj)
+        self.canvas.create_image(thing.coordinate_x + 72, thing.coordinate_y, anchor=NE, image=image_obj)
