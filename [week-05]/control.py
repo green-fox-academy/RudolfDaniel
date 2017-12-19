@@ -65,6 +65,6 @@ dezso = Hero(0, 0, 1, 20, 10, 10)
 for i in range(len(mappa.tiles)):
     drawing.drawer(mappa.tiles[i])
 
-drawing.drawer(dezso.image_down)
+drawing.drawer(dezso)
 
 drawing.root.mainloop()

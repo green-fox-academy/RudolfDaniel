@@ -25,7 +25,7 @@ class Hero(Character):
         super().__init__(coordinate_x, coordinate_y, level, hp, dp, sp)
         self.image_up = "hero-up.png"
         self.image_right = "hero-right.png"
-        self.image_down = "hero-down.png"
+        self.image = "hero-down.png"
         self.image_left = "hero-left.png"
         self.hp = 20 + 3 * randint(1, 6)
         self.dp = dp
