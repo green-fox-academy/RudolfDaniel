@@ -66,5 +66,8 @@ for i in range(len(mappa.tiles)):
     drawing.drawer(mappa.tiles[i])
 
 drawing.drawer(dezso)
+print(dezso.hp)
+print(dezso.dp)
+print(dezso.sp)
 
 drawing.root.mainloop()
