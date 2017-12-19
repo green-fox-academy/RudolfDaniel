@@ -14,7 +14,6 @@ drawing.drawer(dezso)
 """
 drawing.drawer(dezso)
 def on_key_press(e):
-    print(e)
     if e.keysym == "Up":
         dezso.move("up")
     elif e.keysym == "Down":
