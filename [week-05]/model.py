@@ -37,6 +37,7 @@ class Hero(Character):
         self.image_up = "hero-up.png"
         self.image_right = "hero-right.png"
         self.image_left = "hero-left.png"
+        self.image_down = "hero-down.png"
         self.hp = 20 + 3 * randint(1, 6)
         self.dp = 2 * randint(1, 6)
         self.sp = 5 + randint(1, 6)
