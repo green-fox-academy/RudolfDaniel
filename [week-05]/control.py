@@ -9,6 +9,11 @@ supreme_nemesis = Boss(5 * 72, 5 * 72)
 skeleton_1 = Skeleton(2 * 72, 5 * 72)
 skeleton_2 = Skeleton(6 * 72, 3 * 72)
 skeleton_3 = Skeleton(6 * 72, 9 * 72)
+list_of_monsters = []
+list_of_monsters.append(skeleton_1)
+list_of_monsters.append(skeleton_2)
+list_of_monsters.append(skeleton_3)
+list_of_monsters.append(supreme_nemesis)
 
 counter = 0
 
@@ -20,9 +25,26 @@ def drawing_refresh():
     drawing.drawer(skeleton_1)
     drawing.drawer(skeleton_2)
     drawing.drawer(skeleton_3)
+    drawing.canvas.create_text(360, 735, fill="black", font=30, text="Hero (Level " + str(dezso.level) + ") HP: " + str(dezso.actual_hp) + "/" + str(dezso.hp) + " | DP: " + str(dezso.dp) + " | SP: " + str(dezso.sp))
+
+def fight(hero, monster):
+    while hero.actual_hp > 0 and monster.actual_hp > 0:
+        strike_value = (hero.sp + randint(2, 12)) - monster.dp
+        if strike_value > 0:
+            monster.actual_hp -= strike_value
+            print("Strike value to monster: " + str(strike_value))
+            print("Monster actual hp: " + str(monster.actual_hp))
+            if monster.actual_hp <= 0:
+                return print("Monster died!")
+        strike_value = monster.sp + randint(2, 12) - hero.dp
+        if strike_value > 0:
+            hero.actual_hp -= strike_value
+            print("Strike value to hero: " + str(strike_value))
+            print("Hero actual hp: " + str(monster.actual_hp))
+            if hero.actual_hp <= 0:
+                return print("End of the game")
 
 drawing_refresh()
-drawing.canvas.create_text(360, 735, fill="black", font=30, text="Hero (Level " + str(dezso.level) + ") HP: " + str(dezso.actual_hp) + "/" + str(dezso.hp) + " | DP: " + str(dezso.dp) + " | SP: " + str(dezso.sp))
 
 def monster_mover(monster, direction):
     if direction == "Up" and monster.coordinate_y >= 72:
@@ -76,6 +98,12 @@ def on_key_press(e):
         else:
             dezso.move("left")
             dezso.image = dezso.image_left
+
+    elif e.keycode == 32:
+        for i in range(len(list_of_monsters)):
+            if dezso.coordinate_x == list_of_monsters[i].coordinate_x and dezso.coordinate_y == list_of_monsters[i].coordinate_y:
+                fight(dezso, list_of_monsters[i])
+
     if counter % 2 == 0:
         list_of_directions = ["Up", "Down", "Right", "Left"]
         random_index = randrange(0, len(list_of_directions))
