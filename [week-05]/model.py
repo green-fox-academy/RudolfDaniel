@@ -45,16 +45,15 @@ class Hero(Character):
 class Skeleton(Character):
     def __init__(self, coordinate_x, coordinate_y, level, hp, dp, sp):
         super().__init__(coordinate_x, coordinate_y, level, hp, dp, sp)
-        self.image = PhotoImage(file = "skeleton.png")
+        self.image = "skeleton.png"
         self.hp = 2 * self.level * randint(1, 6)
         self.dp = self.level / 2 * randint(1, 6)
         self.sp = self.level + randint(1, 6)
 
-
 class Boss(Character):
     def __init__(self, coordinate_x, coordinate_y, level, hp, dp, sp):
         super().__init__(coordinate_x, coordinate_y, level, hp, dp, sp)
-        self.image = PhotoImage(file = "boss.png")
+        self.image = "boss.png"
         self.hp = 2 * self.level * randint(1, 6) + randint(1, 6)
         self.dp = self.level / 2 * randint(1, 6) + randint(1, 6)
         self.sp = self.level + randint(1, 6) + self.level
