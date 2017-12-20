@@ -21,10 +21,15 @@ def drawing_refresh():
     for i in range(len(mappa.tiles)):
         drawing.drawer(mappa.tiles[i])
     drawing.drawer(dezso)
-    drawing.drawer(supreme_nemesis)
-    drawing.drawer(skeleton_1)
-    drawing.drawer(skeleton_2)
-    drawing.drawer(skeleton_3)
+    if supreme_nemesis.actual_hp > 0:
+        drawing.drawer(supreme_nemesis)
+    if skeleton_1.actual_hp > 0:
+        drawing.drawer(skeleton_1)
+    if skeleton_2.actual_hp > 0:
+        drawing.drawer(skeleton_2)
+    if skeleton_3.actual_hp > 0:
+        drawing.drawer(skeleton_3)
+    drawing.canvas.create_rectangle(0, 720, 720, 750, fill="white")
     drawing.canvas.create_text(360, 735, fill="black", font=30, text="Hero (Level " + str(dezso.level) + ") HP: " + str(dezso.actual_hp) + "/" + str(dezso.hp) + " | DP: " + str(dezso.dp) + " | SP: " + str(dezso.sp))
 
 def fight(hero, monster):
@@ -35,7 +40,7 @@ def fight(hero, monster):
             print("Strike value to monster: " + str(strike_value))
             print("Monster actual hp: " + str(monster.actual_hp))
             if monster.actual_hp <= 0:
-                return print("Monster died!")
+                return monster 
         strike_value = monster.sp + randint(2, 12) - hero.dp
         if strike_value > 0:
             hero.actual_hp -= strike_value
