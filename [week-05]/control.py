@@ -40,7 +40,9 @@ def fight(hero, monster):
             print("Strike value to monster: " + str(strike_value))
             print("Monster actual hp: " + str(monster.actual_hp))
             if monster.actual_hp <= 0:
-                return monster 
+                hero.hp += randint(1, 6)
+                hero.dp += randint(1, 6)
+                hero.sp += randint(1, 6)
         strike_value = monster.sp + randint(2, 12) - hero.dp
         if strike_value > 0:
             hero.actual_hp -= strike_value
