@@ -17,10 +17,11 @@ def on_key_press(e):
         dezso.move("down")
         dezso.image = dezso.image_down
     elif e.keysym == "Right" and dezso.coordinate_x <= 640:
-        for i in range(len(mappa.tiles)):
-            if dezso.coordinate_y == mappa.tiles[i].coordinate_y and dezso.coordinate_x <= mappa.tiles[i].coordinate_x - 72:
-                dezso.move("right")
-                dezso.image = dezso.image_right
+        if isinstance(mappa.get_tile(dezso.coordinate_x + 72, dezso.coordinate_y), Wall):
+            dezso.image = dezso.image_right
+        else:
+            dezso.move("right")
+            dezso.image = dezso.image_right
     elif e.keysym == "Left" and dezso.coordinate_x >= 72:
         dezso.move("left")
         dezso.image = dezso.image_left

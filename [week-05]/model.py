@@ -115,3 +115,8 @@ class Map(object):
         self.tiles[91] = Wall(1 * 72, 9 * 72)
         self.tiles[93] = Wall(3 * 72, 9 * 72)
         self.tiles[95] = Wall(5 * 72, 9 * 72)
+    
+    def get_tile(self, coordinate_x, coordinate_y):
+        for i in range(len(self.tiles)):
+            if coordinate_x == self.tiles[i].coordinate_x and coordinate_y == self.tiles[i].coordinate_y:
+                return self.tiles[i]
