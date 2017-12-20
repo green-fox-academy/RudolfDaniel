@@ -12,13 +12,11 @@ class Wall(Tile):
         self.image = "wall.png"
 
 class Character(object):
-    def __init__(self, coordinate_x, coordinate_y, level, hp, dp, sp):
+    def __init__(self, coordinate_x, coordinate_y):
         self.coordinate_x = coordinate_x
         self.coordinate_y = coordinate_y
-        self.level = level
-        self.hp = hp
-        self.dp = dp
-        self.sp = sp
+        self.level = 1
+
     def move(self, direction):
         self.direction = direction
         if self.direction == "right":
@@ -31,30 +29,33 @@ class Character(object):
             self.coordinate_y += 72
 
 class Hero(Character):
-    def __init__(self, coordinate_x, coordinate_y, level, hp, dp, sp):
-        super().__init__(coordinate_x, coordinate_y, level, hp, dp, sp)
+    def __init__(self, coordinate_x, coordinate_y):
+        super().__init__(coordinate_x, coordinate_y)
         self.image = "hero-down.png"
         self.image_up = "hero-up.png"
         self.image_right = "hero-right.png"
         self.image_left = "hero-left.png"
         self.image_down = "hero-down.png"
         self.hp = 20 + 3 * randint(1, 6)
+        self.actual_hp = self.hp
         self.dp = 2 * randint(1, 6)
         self.sp = 5 + randint(1, 6)
 
 class Skeleton(Character):
-    def __init__(self, coordinate_x, coordinate_y, level, hp, dp, sp):
-        super().__init__(coordinate_x, coordinate_y, level, hp, dp, sp)
+    def __init__(self, coordinate_x, coordinate_y):
+        super().__init__(coordinate_x, coordinate_y)
         self.image = "skeleton.png"
         self.hp = 2 * self.level * randint(1, 6)
+        self.actual_hp = self.hp
         self.dp = self.level / 2 * randint(1, 6)
         self.sp = self.level + randint(1, 6)
 
 class Boss(Character):
-    def __init__(self, coordinate_x, coordinate_y, level, hp, dp, sp):
-        super().__init__(coordinate_x, coordinate_y, level, hp, dp, sp)
+    def __init__(self, coordinate_x, coordinate_y):
+        super().__init__(coordinate_x, coordinate_y)
         self.image = "boss.png"
         self.hp = 2 * self.level * randint(1, 6) + randint(1, 6)
+        self.actual_hp = self.hp
         self.dp = self.level / 2 * randint(1, 6) + randint(1, 6)
         self.sp = self.level + randint(1, 6) + self.level
 

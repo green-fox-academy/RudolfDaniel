@@ -10,7 +10,7 @@ skeleton_image = []
 class Draw(object):
     def __init__(self):
         self.root = Tk()
-        self.canvas = Canvas(self.root, width="720", height="720")
+        self.canvas = Canvas(self.root, width="720", height="750")
         self.canvas.pack()
         self.useful_image = "overwrite"
         self.canvas.focus_set()

@@ -4,11 +4,13 @@ from random import *
 
 mappa = Map()
 drawing = Draw()
-dezso = Hero(0, 0, 1, 0, 0, 0)
-supreme_nemesis = Boss(5 * 72, 5 * 72, 0, 0, 0, 0)
-skeleton_1 = Skeleton(2 * 72, 5 * 72, 0, 0, 0, 0)
-skeleton_2 = Skeleton(6 * 72, 3 * 72, 0, 0, 0, 0)
-skeleton_3 = Skeleton(6 * 72, 9 * 72, 0, 0, 0, 0)
+dezso = Hero(0, 0)
+supreme_nemesis = Boss(5 * 72, 5 * 72)
+skeleton_1 = Skeleton(2 * 72, 5 * 72)
+skeleton_2 = Skeleton(6 * 72, 3 * 72)
+skeleton_3 = Skeleton(6 * 72, 9 * 72)
+
+counter = 0
 
 def drawing_refresh():
     for i in range(len(mappa.tiles)):
@@ -20,6 +22,7 @@ def drawing_refresh():
     drawing.drawer(skeleton_3)
 
 drawing_refresh()
+drawing.canvas.create_text(360, 735, fill="black", font=30, text="Hero (Level " + str(dezso.level) + ") HP: " + str(dezso.actual_hp) + "/" + str(dezso.hp) + " | DP: " + str(dezso.dp) + " | SP: " + str(dezso.sp))
 
 def monster_mover(monster, direction):
     if direction == "Up" and monster.coordinate_y >= 72:
@@ -42,8 +45,6 @@ def monster_mover(monster, direction):
             return None
         else:
             monster.move("left")
-
-counter = 0
 
 def on_key_press(e):
     global counter
