@@ -40,6 +40,11 @@ class Hero(Character):
         self.actual_hp = self.hp
         self.dp = 2 * randint(1, 6)
         self.sp = 5 + randint(1, 6)
+    def level_up(self):
+        self.level += 1
+        self.hp += randint(1, 6)
+        self.dp += randint(1, 6)
+        self.sp += randint(1, 6)
 
 class Skeleton(Character):
     def __init__(self, coordinate_x, coordinate_y):
