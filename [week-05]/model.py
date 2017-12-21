@@ -49,20 +49,26 @@ class Hero(Character):
 class Skeleton(Character):
     def __init__(self, coordinate_x, coordinate_y):
         super().__init__(coordinate_x, coordinate_y)
+        self.if_has_the_key = False
         self.image = "skeleton.png"
         self.hp = 2 * self.level * randint(1, 6)
         self.actual_hp = self.hp
         self.dp = self.level / 2 * randint(1, 6)
         self.sp = self.level + randint(1, 6)
+    def level_up(self):
+        self.level += 1
 
 class Boss(Character):
     def __init__(self, coordinate_x, coordinate_y):
         super().__init__(coordinate_x, coordinate_y)
+        self.if_has_the_key = False
         self.image = "boss.png"
         self.hp = 2 * self.level * randint(1, 6) + randint(1, 6)
         self.actual_hp = self.hp
         self.dp = self.level / 2 * randint(1, 6) + randint(1, 6)
         self.sp = self.level + randint(1, 6) + self.level
+    def level_up(self):
+        self.level += 1
 
 class Map(object):
     def __init__(self):

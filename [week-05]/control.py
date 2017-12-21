@@ -10,17 +10,32 @@ skeleton_1 = Skeleton(2 * 72, 5 * 72)
 skeleton_2 = Skeleton(6 * 72, 3 * 72)
 skeleton_3 = Skeleton(6 * 72, 9 * 72)
 list_of_monsters = []
+list_of_skeletons = []
 list_of_monsters.append(skeleton_1)
 list_of_monsters.append(skeleton_2)
 list_of_monsters.append(skeleton_3)
 list_of_monsters.append(supreme_nemesis)
+list_of_skeletons.append(skeleton_1)
+list_of_skeletons.append(skeleton_2)
+list_of_skeletons.append(skeleton_3)
 
 counter = 0
+
+def label():
+        drawing.canvas.create_rectangle(0, 720, 720, 750, fill="white")
+        drawing.canvas.create_text(360, 735, fill="black", font=30, text="Hero (Level " + str(dezso.level) + ") HP: " + str(dezso.actual_hp) + "/" + str(dezso.hp) + " | DP: " + str(dezso.dp) + " | SP: " + str(dezso.sp))
+
+def give_the_key_to_a_random_skeleton():
+    which = randint(0, 2)
+    list_of_skeletons[which].if_has_the_key = True
+
+give_the_key_to_a_random_skeleton()
 
 def drawing_refresh():
     for i in range(len(mappa.tiles)):
         drawing.drawer(mappa.tiles[i])
-    drawing.drawer(dezso)
+    if dezso.actual_hp > 0:
+        drawing.drawer(dezso)
     if supreme_nemesis.actual_hp > 0:
         drawing.drawer(supreme_nemesis)
     if skeleton_1.actual_hp > 0:
@@ -29,8 +44,7 @@ def drawing_refresh():
         drawing.drawer(skeleton_2)
     if skeleton_3.actual_hp > 0:
         drawing.drawer(skeleton_3)
-    drawing.canvas.create_rectangle(0, 720, 720, 750, fill="white")
-    drawing.canvas.create_text(360, 735, fill="black", font=30, text="Hero (Level " + str(dezso.level) + ") HP: " + str(dezso.actual_hp) + "/" + str(dezso.hp) + " | DP: " + str(dezso.dp) + " | SP: " + str(dezso.sp))
+    label()
 
 def fight(hero, monster):
     while hero.actual_hp > 0 and monster.actual_hp > 0:
@@ -41,13 +55,15 @@ def fight(hero, monster):
             print("Monster actual hp: " + str(monster.actual_hp))
             if monster.actual_hp <= 0:
                 dezso.level_up()
+                if monster.if_has_the_key == True:
+                    return print("You reached next level!")
         strike_value = monster.sp + randint(2, 12) - hero.dp
         if strike_value > 0:
             hero.actual_hp -= strike_value
             print("Strike value to hero: " + str(strike_value))
-            print("Hero actual hp: " + str(monster.actual_hp))
+            print("Hero actual hp: " + str(hero.actual_hp))
             if hero.actual_hp <= 0:
-                return print("End of the game")
+                return print("Game over!")
 
 drawing_refresh()
 
