@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    align-self: flex-end;
+    height: 191px;
+}
+
+.green {
+    background: green;
+    flex: 1;
+    order: -1;
+}
+
+.yellow {
+    background: yellow;
+    flex: 2;
+    order: -2;
+}
+
+.purple {
+    background: purple;
+    flex: 1;
+    order: -3;
+}
