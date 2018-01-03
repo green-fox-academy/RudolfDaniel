@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 381px;
+    height: 573px;
+}
+
+.item {
+    align-self: flex-end;
+    width: 100%;
+}
+
+.green {
+    background: green;
+    height: 25%;
+}
+
+.yellow {
+    background: yellow;
+    height: 50%;
+    order: 1;
+}
+
+.purple {
+    background: purple;
+    height: 25%;
+}
