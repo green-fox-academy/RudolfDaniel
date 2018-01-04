@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    align-self: flex-end;
+    height: 191px;
+}
+
+.green {
+    background: green;
+    flex: 1;
+}
+
+.yellow {
+    background: yellow;
+    flex: 2;
+}
+
+.purple {
+    background: purple;
+    flex: 1;
+}
+
+@media screen and (max-width: 381px) {
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 381px;
+    height: 573px;
+}
+    
+.item {
+    align-self: flex-end;
+    width: 100%;
+}
+    
+.green {
+    background: green;
+    flex: 1;
+}
+    
+.yellow {
+    background: yellow;
+    flex: 1;
+}
+
+.purple {
+    background: purple;
+    flex: 1;
+}
+
+}
