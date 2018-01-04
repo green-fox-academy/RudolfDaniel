@@ -1,0 +1,58 @@
+body {
+    background: rgb(67, 150, 233);
+    font-family: sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    color: rgb(102, 107, 132);
+}
+
+thead {
+    background-color: rgb(27, 30, 36);
+    color: rgb(191, 199, 206);
+}
+
+tbody {
+    background-color: rgb(235, 235, 235);
+}
+
+th {
+    padding: 15px;
+    padding-right: 180px;
+    border-bottom: 4px solid rgb(158, 167, 175);
+}
+
+tr th:nth-child(1) {
+    border-right: 2px solid rgb(158, 167, 175);
+    border-top-left-radius: 4px;
+}
+
+tr th:nth-child(2) {
+    border-top-right-radius: 4px;
+}
+
+td {
+    padding: 15px;
+    padding-right: 180px;
+    border-bottom: 2px solid rgb(158, 167, 175);
+    border-right: 2px solid rgb(158, 167, 175);
+}
+
+tr td:nth-child(2n) {
+    border-right: 0px;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: rgb(255, 255, 255)
+}
+
+tbody tr:nth-child(5) td:nth-child(1) {
+    border-bottom: 0px;
+    border-bottom-left-radius: 4px;
+}
+
+tbody tr:nth-child(5) td:nth-child(2) {
+    border-bottom: 0px;
+    border-bottom-right-radius: 4px;
+}
