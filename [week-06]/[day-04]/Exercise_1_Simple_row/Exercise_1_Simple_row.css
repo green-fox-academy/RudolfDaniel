@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(176, 42, 255);
+}
+
+.container {
+    margin: 14px;
+    line-height: 297px;
+    font-size: 3em;
+    display: grid;
+    grid-template-columns: 1fr 60% 1fr;
+    grid-auto-rows: 297px;
+    grid-gap: 14px;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+}
+
+div div:first-child {
+    background: rgb(255, 214, 42);
+}
+
+div div {
+    background: rgb(81, 212, 0);
+}
+
+div div:last-child {
+    background: rgb(255, 214, 42);
+}
