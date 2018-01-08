@@ -2,10 +2,7 @@
 
 var lineCount = 6;
 
-console.log('%'.repeat(lineCount));
-
-for (var i = 0; i <= lineCount-3; i++) {
-    console.log('%' + ' '.repeat(i) + '%' + ' '.repeat(lineCount-3-i) + '%');
+for (var i = 0; i <= lineCount; i++) {
+    console.log('% '.repeat(4));
+    console.log(' %'.repeat(4));
 }
-
-console.log('%'.repeat(lineCount));
