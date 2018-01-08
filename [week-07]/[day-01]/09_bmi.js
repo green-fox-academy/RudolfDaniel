@@ -1,10 +1,6 @@
 'use strict';
 
-var a = 123;
-var b = 526;
+var massInKg = 81.2
+var heightInM = 1.78
 
-a = b;
-b = 123;
-
-console.log(a);
-console.log(b);
+console.log((massInKg) / ((heightInM)*(heightInM)));
