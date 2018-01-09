@@ -1,22 +1,15 @@
 'use strict';
 
-let matrix = [];
+let aj = [3, 4, 5, 6, 7];
 
-function create_matrix(size) {
-  
-  for (var j = 0; j < size; j++) {
-    matrix.splice(j, 0, [])
-    for (var i = 0; i < size; i++) {
-      matrix[j].splice(2, 0, 0);
-    }
-  }
-  var counter = size-1;
-  for (var k = 0; k < size; k++) {
-    matrix[k][counter] = 1;
-    counter -= 1;
-  }
+aj.reverse();
 
+console.log(aj);
+
+let new_aj = [];
+
+for (var i = aj.length; i > -1; i -= 1) {
+  new_aj.push(aj[i]);
 }
 
-create_matrix(4);
-console.log(matrix);
+console.log(new_aj);
