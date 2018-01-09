@@ -1,7 +1,9 @@
 'use strict';
 
-let t = [1, 2, 3, 4, 5];
+let nimals = ['kuty', 'macsk', 'cic'];
 
-t[2] += 1
+var animals = nimals.map(function(e) {
+  return e + 'a';
+})
 
-console.log(t[2]);
+console.log(animals);
