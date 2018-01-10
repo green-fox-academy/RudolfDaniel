@@ -1,7 +1,14 @@
-/*
-  1. Alert the content of the heading.
-  2. Write the content of the first paragraph to the console.
-  3. Alert the content of the second paragraph.
-  4. Replace the heading's content with 'New content'.
-  5. Replace the last paragraph's content with the first paragraph's content.
-*/
+let content_of_text = document.querySelector('h1');
+alert(content_of_text.textContent);
+
+let content_of_paragraph = document.getElementsByTagName('p')[o];
+console.log(content_of_paragraph.textContent);
+
+let content_of_second = document.querySelector('.other');
+alert(content_of_second.textContent);
+
+content_of_text.innerText = 'New content';
+console.log(content_of_text);
+
+content_of_second.innerText = content_of_text.textContent;
+console.log(content_of_second);
