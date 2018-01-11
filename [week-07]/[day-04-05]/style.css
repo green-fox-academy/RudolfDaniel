@@ -4,18 +4,27 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  grid-template-rows: repeat(2, 1fr);
   background-color: grey;
 }
 
 .container {
+  width: 800px;
+  height: 310px;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .box {
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
   list-style: none;
 }
