@@ -11,20 +11,58 @@ body {
 }
 
 .container {
+  margin: auto;
+  background: yellow;
   width: 800px;
-  height: 310px;
+  height: 450px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.left {
+  border: none;
+  background-color: lightgray;
+  width: 45px;
+  height: 450px;
+}
+
+.right {
+  border: none;
+  background-color: lightgray;
+  width: 45px;
+  height: 450px;
+}
+
+.left:focus {
+  outline: 1px groove blue;
+}
+
+.right:focus {
+  outline: 1px groove blue;
 }
 
 .box {
+  background: green;
   display: flex;
   justify-content: center;
 }
 
 .thumbnail {
+  background: red;
+  width: 400px;
+  height: 46px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
   list-style: none;
+}
+
+li button {
+  border: 2px solid white;
+  width: 45px;
+  height: 45px;
+}
+
+li button:focus {
+  outline: 1px groove blue;
 }
