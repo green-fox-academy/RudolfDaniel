@@ -42,13 +42,14 @@ body {
 }
 
 .box {
-  background: green;
+/*  background: green;*/
   display: flex;
   justify-content: center;
 }
 
 .thumbnail {
-  background: red;
+  margin-top: 10px;
+/*  background: red;*/
   width: 400px;
   height: 46px;
   display: flex;
@@ -58,7 +59,8 @@ body {
 }
 
 li button {
-  border: 2px solid white;
+  border: 3px solid white;
+  border-radius: 2px;
   width: 45px;
   height: 45px;
 }
