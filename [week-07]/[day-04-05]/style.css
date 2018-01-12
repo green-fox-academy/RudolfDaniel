@@ -4,6 +4,7 @@
 }
 
 body {
+  padding-top: 50px;
   display: grid;
   grid-template-columns: repeat(1, 1fr); 
   grid-template-rows: repeat(2, 1fr);
@@ -12,11 +13,20 @@ body {
 
 .container {
   margin: auto;
-  background: yellow;
+  background: lightgray;
   width: 800px;
   height: 450px;
   display: flex;
   justify-content: space-between;
+}
+
+.main_image {
+  display: flex;
+  width: 710px;
+  height: 450px;
+  align-items: flex-end;
+  justify-content: center;
+  /* background-image: url(kv-2.jpg); */
 }
 
 .left {
