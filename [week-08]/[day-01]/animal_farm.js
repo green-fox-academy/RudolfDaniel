@@ -70,9 +70,11 @@ console.log(SheepFarm.animals[0].hunger);
 SheepFarm.progress();
 
 // Should log 20 Animal objects
-/*
+
 const button = document.querySelector('button');
-*/
+
+button.addEventListener('click', SheepFarm.progress.bind(SheepFarm));
+
 // Add a click event to the button and call 'progress'
 
 // The progress function should log the following to the console:
