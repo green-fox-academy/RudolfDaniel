@@ -13,6 +13,10 @@ function Animal() {
   }
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function Farm(place) {
   this.place = place
   this.animals = []
@@ -30,9 +34,30 @@ function Farm(place) {
         min_index = i;
       }
     }
+    this.animals.pop(animals[min_index]);
+  }
+  this.progress = function() {
+    for (var i = 0; i < this.animals.length; i++) {
+      if (getRandomInt(2) === 0) {
+        this.animals[i].eat()
+      }
+      if (getRandomInt(2) === 0) {
+        this.animals[i].drink()
+      }
+      if (getRandomInt(2) === 0) {
+        this.animals[i].play()
+      }
+    }
+  if (this.animals.length === 0) {
+    console.log('bankrupt')
+  } else if (this.animals.length > 0 && this.animals.length < this.place) {
+    console.log('okay')
+  } else if (this.animals.length === this.place) {
+    console.log('full')
+  }
+  console.log('Number of animals ' + this.animals.length)
   }
 }
-
 
 // Create a sheep farm with 20 slots
 const SheepFarm = new Farm(20);
@@ -40,7 +65,11 @@ const SheepFarm = new Farm(20);
 SheepFarm.breed();
 
 console.log(SheepFarm.animals.length);
-console.log(SheepFarm.animals[0].hunger); // Should log 20 Animal objects
+console.log(SheepFarm.animals[0].hunger);
+
+SheepFarm.progress();
+
+// Should log 20 Animal objects
 /*
 const button = document.querySelector('button');
 */
