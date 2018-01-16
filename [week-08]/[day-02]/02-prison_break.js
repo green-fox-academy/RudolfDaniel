@@ -24,6 +24,7 @@ function Prison(name) {
     fugitive = null;
     console.log('BREAKING NEWS, ' + name_of_prisoner + ' escaped the prison')
   }
+
 }
 
 const alcatraz = new Prison('Sad Panda');
