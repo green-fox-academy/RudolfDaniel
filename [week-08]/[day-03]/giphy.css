@@ -11,7 +11,7 @@ body {
   background-color: grey;
 }
 
-.container {
+div {
   margin: auto;
   background: lightgray;
   width: 800px;
@@ -41,7 +41,7 @@ body {
   width: 400px;
   height: 46px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
   list-style: none;
 }
