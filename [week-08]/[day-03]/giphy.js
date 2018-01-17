@@ -1,11 +1,6 @@
 'use strict';
-/*
-let gifs = []
-*/
 
 let firstgif = new XMLHttpRequest();
-
-
 firstgif.open("GET", "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=jrr0XR1sMJCpdtiGSgc5FW7n6sAFzphS&limit=1");
 firstgif.send( null );
 
@@ -17,27 +12,35 @@ firstgif.onreadystatechange = function() {
   }
 };
 
-
-
 let image = document.querySelector('.main_image');
-
-
 
 function letimage(source_url) {
   let element = document.createElement('div');
-  element.innerHTML = "<img src='" + source_url + "' width='39' height='39'>"
+  element.innerHTML = "<img src='" + source_url + "' width='710' height='450'>"
   image.appendChild(element);
 }
 
-/*
-for (var i = 0; i < tanks.length; i++) {
-  letimage(i);
+
+
+
+let gifs = new XMLHttpRequest();
+gifs.open("GET", "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=jrr0XR1sMJCpdtiGSgc5FW7n6sAFzphS&limit=16");
+gifs.send( null );
+
+gifs.onreadystatechange = function () {
+  if (gifs.readyState === 4 && gifs.status === 200) {
+    let urls = JSON.parse(gifs.response);
+    console.log(urls);
+    for (var i = 0; i < urls.data.length; i++) {
+      letimages(urls.data[i].images.original.url);
+    }
+  }
 }
 
-let first_image = document.querySelectorAll('li button img')[0];
-let display = document.getElementsByClassName('main_image');
+let more_gifs = document.querySelector('.thumbnail');
 
-let source = first_image.src;
-
-display[0].style.backgroundImage = 'url(' + source + ')';
-*/
+function letimages(source_url) {
+  let element = document.createElement('li');
+  element.innerHTML = "<img src='" + source_url + "' width='39' height='39'>"
+  more_gifs.appendChild(element);
+}
