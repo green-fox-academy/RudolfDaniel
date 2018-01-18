@@ -29,6 +29,11 @@ h1 {
   height: 100px;
 }
 
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
 aside {
   float: right;
   width: 305px;
@@ -85,7 +90,18 @@ li {
   list-style: square;
 }
 
+.commentbox {
+  width: 100%;
+  margin-right: 10px;
+}
+
 .comment {
+  width: 100%;
+  margin: 10px;
+  margin-bottom: 1px;
+  background-color: rgb(255, 255, 255);
+}
+
+div div:first-child {
   float: left;
-  display: flex;
 }
