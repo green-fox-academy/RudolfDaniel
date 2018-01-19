@@ -102,7 +102,10 @@ li {
   background-color: rgb(255, 255, 255);
 }
 
-div div:first-child {
+.voter {
   float: left;
-  
+}
+
+.clearfix {
+  clear: both;
 }

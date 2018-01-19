@@ -41,9 +41,16 @@ function createComment(element) {
   commenttext.classList.add('commenttext');
   comment.appendChild(commenttext);
 
+  let clear = document.createElement('div');
+  clear.classList.add('clearfix');
+  comment.appendChild(clear);
+
   let title = document.createElement('h3');
   commenttext.appendChild(title);
   title.textContent = element.title;
-}
 
-//createComment();
+  let submitter = document.createElement('p');
+  submitter.classList.add('submitter');
+  submitter.textContent = 'submitted by ' + element.owner + ' ' + element.timestamp + ' minutes ago';
+  commenttext.appendChild(submitter);
+}
