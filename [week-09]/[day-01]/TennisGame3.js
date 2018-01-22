@@ -1,32 +1,32 @@
 'use strict';
 
-var TennisGame3 = function(p1N, p2N) {
-  this.p2 = 0;
-  this.p1 = 0;
+var TennisGame3 = function(player1Name, player2Name) {
+  this.matchScore1 = 0;
+  this.matchScore2 = 0;
 
-  this.p1N = p1N;
-  this.p2N = p2N;
+  this.player1Name = player1Name;
+  this.player2Name = player2Name;
 };
 
 TennisGame3.prototype.getScore = function() {
   var s;
-  if ((this.p1 < 4 && this.p2 < 4) && (this.p1 + this.p2 < 6)) {
+  if ((this.matchScore1 < 4 && this.matchScore2 < 4) && (this.matchScore1 + this.matchScore2 < 6)) {
       var p = ['Love', 'Fifteen', 'Thirty', 'Forty'];
-      s = p[this.p1];
-      return (this.p1 == this.p2) ? s + '-All' : s + '-' + p[this.p2];
+      s = p[this.matchScore1];
+      return (this.matchScore1 == this.matchScore2) ? s + '-All' : s + '-' + p[this.matchScore2];
   } else {
-      if (this.p1 == this.p2)
+      if (this.matchScore1 == this.matchScore2)
           return 'Deuce';
-      s = this.p1 > this.p2 ? this.p1N : this.p2N;
-      return ((this.p1 - this.p2) * (this.p1 - this.p2) == 1) ? 'Advantage ' + s : 'Win for ' + s;
+      s = this.matchScore1 > this.matchScore2 ? this.player1Name : this.player2Name;
+      return ((this.matchScore1 - this.matchScore2) * (this.matchScore1 - this.matchScore2) == 1) ? 'Advantage ' + s : 'Win for ' + s;
   }
 };
 
 TennisGame3.prototype.wonPoint = function(playerName) {
   if (playerName == 'player1')
-      this.p1 += 1;
+      this.matchScore1 += 1;
   else
-      this.p2 += 1;
+      this.matchScore2 += 1;
 
 };
 
