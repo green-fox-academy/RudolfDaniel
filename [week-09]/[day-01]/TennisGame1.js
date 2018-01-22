@@ -8,7 +8,7 @@ var TennisGame1 = function(player1Name, player2Name) {
 };
 
 TennisGame1.prototype.wonPoint = function(playerName) {
-  if (playerName === 'player1') {
+  if (playerName === this.player1Name) {
     this.matchScore1 += 1;
   } else {
     this.matchScore2 += 1;
