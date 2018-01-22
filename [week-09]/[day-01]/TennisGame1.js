@@ -8,56 +8,53 @@ var TennisGame1 = function(player1Name, player2Name) {
 };
 
 TennisGame1.prototype.wonPoint = function(playerName) {
-  if (playerName === 'player1')
+  if (playerName === 'player1') {
     this.matchScore1 += 1;
-  else
+  } else {
     this.matchScore2 += 1;
+  }
 };
 
 TennisGame1.prototype.getScore = function() {
   let score = '';
   let tempScore = 0;
   if (this.matchScore1 === this.matchScore2) {
-    switch (this.matchScore1) {
-      case 0:
-        score = 'Love-All';
-        break;
-      case 1:
-        score = 'Fifteen-All';
-        break;
-      case 2:
-        score = 'Thirty-All';
-        break;
-      default:
-        score = 'Deuce';
-        break;
+    if (this.matchScore1 === 0) {
+      score = 'Love-All';
+    } else if (this.matchScore1 === 1) {
+      score = 'Fifteen-All';
+    } else if (this.matchScore1 === 2) {
+      score = 'Thirty-All';
+    } else {
+      score = "Deuce";
     }
-  } else if (this.matchScore1 >= 4 || this.matchScore2 >= 4) {
+    } else if (this.matchScore1 >= 4 || this.matchScore2 >= 4) {
     let minusResult = this.matchScore1 - this.matchScore2;
-    if (minusResult === 1) score = 'Advantage player1';
-    else if (minusResult === -1) score = 'Advantage player2';
-    else if (minusResult >= 2) score = 'Win for player1';
-    else score = 'Win for player2';
+    if (minusResult === 1) {
+      score = 'Advantage player1';
+    } else if (minusResult === -1) {
+      score = 'Advantage player2';
+    } else if (minusResult >= 2) {
+      score = 'Win for player1';
+    } else {
+      score = 'Win for player2';
+    }
   } else {
     for (let i = 1; i < 3; i++) {
-      if (i === 1) tempScore = this.matchScore1;
-      else {
+      if (i === 1) {
+        tempScore = this.matchScore1;
+      } else {
         score += '-';
         tempScore = this.matchScore2;
-      }
-      switch (tempScore) {
-        case 0:
-          score += 'Love';
-          break;
-        case 1:
-          score += 'Fifteen';
-          break;
-        case 2:
-          score += 'Thirty';
-          break;
-        case 3:
-          score += 'Forty';
-          break;
+      }  
+      if (tempScore === 0) {
+        score += 'Love';
+      } else if (tempScore === 1) {
+        score += 'Fifteen';
+      } else if (tempScore === 2) {
+        score += 'Thirty';
+      } else if (tempScore === 3) {
+        score += 'Forty';
       }
     }
   }
