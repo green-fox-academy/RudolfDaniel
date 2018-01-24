@@ -3,10 +3,10 @@
 let test = require('tape');
 let countLetters = require('./count_letters.js');
 
-test('is_anagram', function (t) {
-  var actual = anagramma('ez egy anagramma');
-  var expected = true;
+test('counter', function (t) {
+  var actual = countLetters('letter');
+  var expected = { 'l': 1, 'e': 2, 't': 2, 'r': 1 };
 
-  t.equal(actual, expected);
+  t.deepEqual(actual, expected);
   t.end();
 });

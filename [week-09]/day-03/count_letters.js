@@ -11,6 +11,6 @@ let countLetters = function (string) {
   }
   return stringObject;
 }
-console.log(countLetters('ez egy anagramma'));
+// console.log(countLetters('ez egy anagramma'));
 
 module.exports = countLetters;
