@@ -54,4 +54,16 @@ app.get('/appenda/:appendable', (req, res) => {
   }
 })
 
+app.push('/dountil/:what', (req, res) => {
+  const number = req.body.until;
+  const operation = req.params.what;
+  if (operation === 'sum') {
+    res.json({
+      result: 
+    })
+  }
+
+
+})
+
 app.listen(8080);
