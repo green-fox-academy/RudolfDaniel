@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/hello', (req, res) => {
   res.json({
-    message: "Hello World!"
+    message: "Thank you for your attention!"
   })
 });
 
