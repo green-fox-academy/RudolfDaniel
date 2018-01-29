@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  margin: auto;
+  margin-top: 100px;
+  width: 700px;
+  height: 400px;
+  background-color: rgb(255, 255, 255);
+}
+
+.leftsection {
+  float: left;
+  display: grid;
+  background-color: red;
+  width: 350px;
+  height: 350px;
+}
+
+.rightsection {
+  float: right;
+  display: grid;
+  background-color: green;
+  width: 350px;
+  height: 350px;
+}
+
+.controlpanel {
+  background-color: blue;
+}
