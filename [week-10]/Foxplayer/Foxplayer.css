@@ -14,8 +14,8 @@ body {
 .leftsection {
   float: left;
   display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-rows: repeat(2, 50%);
+  grid-template-columns: 215px 135px;
+  grid-template-rows: 135px auto;
   background-color: rgb(245, 245, 245);
   width: 350px;
   height: 350px;
@@ -31,7 +31,14 @@ body {
 
 .playlist-title {
   margin: 10px;
-  margin-left: 30px;
+  margin-left: 20px;
+}
+
+.artwork {
+  width: 135px;
+  height: 135px;
+  background-image: url("Images/music-placeholder.png");
+  background-size: 135px;
 }
 
 .playlist {
