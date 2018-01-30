@@ -14,11 +14,28 @@ body {
 .leftsection {
   float: left;
   display: grid;
-  grid-template-columns: repeat(1fr, 1fr);
-  grid-template-rows: repeat(1fr, 1fr);
-  background-color: red;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
+  background-color: rgb(245, 245, 245);
   width: 350px;
   height: 350px;
+}
+
+.logo-button {
+  margin: 10px;
+  width: 87px;
+  height: 81px;
+  border: none;
+  background-image: url("Images/foxplayer.png")
+}
+
+.playlist-title {
+  margin: 10px;
+  margin-left: 30px;
+}
+
+.playlist {
+  grid-column: span 2;
 }
 
 .rightsection {
