@@ -11,19 +11,16 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/Index.html');
 });
 
+let newLicencePlate = { platenumber: 'here will be the plate number'};
+
 app.get('/search', (req, res) => {
-  res.json({
-    message: "This is your licence plates"
-  })
+  res.json(newLicencePlate);
 });
 
-app.post('/playlists', (req, res) => {
-  console.log("Data sent");
-  /*
-  let newPlayList = { 'id': playlists.length, 'title': req.body.title, 'system': 0 };
-  playlists.push(newPlayList);
-  res.json(newPlayList);
-  */
+app.post('/search', (req, res) => {
+  console.log(req.body);
+  newLicencePlate = { 'platenumber': req.body.platenumber };
+  res.json(newLicencePlate);
 });
 
 app.listen(8000);
