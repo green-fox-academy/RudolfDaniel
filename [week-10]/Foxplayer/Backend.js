@@ -2,11 +2,27 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mysql = require('mysql');
 
 const app = express();
 
 app.use('/', express.static('Public'));
 app.use(bodyParser.json());
+
+const conn = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'foxitplayer',
+});
+
+conn.connect(function(err){
+  if(err){
+    console.log("Error connecting to Db");
+    return;
+  }
+  console.log("Connection established");
+});
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/Foxplayer.html');
@@ -30,7 +46,18 @@ const songs = [
 ]
 
 app.get('/playlists', (req, res) => {
-  res.json(playlists)
+  conn.query('SELECT * FROM playlists;', (err, rows) => {
+    if(err) {
+      console.log(err.toString());
+      res.status(500).send('Database error');
+      return;
+    }
+    res.json(rows);
+  });
+});
+
+app.get('/songs', (req, res) => {
+  res.json(songs)
 });
 
 app.post('/playlists', (req, res) => {
