@@ -57,10 +57,24 @@ app.get('/playlists', (req, res) => {
 });
 
 app.get('/songs', (req, res) => {
-  res.json(songs)
+  conn.query('SELECT * FROM tracks;', (err, rows) => {
+    if(err) {
+      console.log(err.toString());
+      res.status(500).send('Database error');
+      return;
+    }
+  res.json(rows);
+})
 });
 
 app.post('/playlists', (req, res) => {
+/*  conn.query(`INSERT INTO playlists (Playlist, System) VALUES (${req.body.title}, 0)`, (err, rows) => {
+    if(err) {
+      console.log(err.toString());
+      res.status(500).send('Database error');
+      return;
+    }
+    res.json(rows);*/
   let newPlayList = { 'id': playlists.length, 'title': req.body.title, 'system': 0 };
   playlists.push(newPlayList);
   res.json(newPlayList);
