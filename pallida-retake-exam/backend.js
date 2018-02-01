@@ -55,7 +55,6 @@ app.get('/price-check', (req, res) => {
   conn.query(`SELECT in_store FROM warehouse WHERE item_name = "${req.query.item}"`, (err, rows) => {
     console.log(req.query.item);
     console.log(rows);
-    console.log(err);
   })
   /*
   if (req.query.quantity <= testProduct.in_store && req.query.item === testProduct.item_name) {
